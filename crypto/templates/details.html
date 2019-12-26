@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   {{ crypto.DISPLAY }}
+
+   <div class="container">
+        {% if crypto.Response %}
+            Sorry, {{ quote }} doesn't. Please Try Again...
+        {% endif %}
+    {% for key,value in crypto.DISPLAY.items %} 
+        <div class="media">
+            <div class="media-body">
+                <h5 class="mt-0 mb-1">{{key}}</h5>
+                <strong></strong>{{ value.INR.PRICE }} <br/>
+                <strong></strong>{{ value.INR.PRICE }} <br/>
+                <strong></strong>{{ value.INR.PRICE }} <br/>
+            </div>
+            
+        </div>
+    {% endfor %}
+   </div>
+{% endblock %}
