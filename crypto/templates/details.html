@@ -7,16 +7,15 @@
         {% if crypto.Response %}
             Sorry, {{ quote }} doesn't. Please Try Again...
         {% endif %}
-    {% for key,value in crypto.DISPLAY.items %} 
-        <div class="media">
-            <div class="media-body">
-                <h5 class="mt-0 mb-1">{{key}}</h5>
-                <strong></strong>{{ value.INR.PRICE }} <br/>
-                <strong></strong>{{ value.INR.PRICE }} <br/>
-                <strong></strong>{{ value.INR.PRICE }} <br/>
+    {% for key,value in crypto.DISPLAY.items %}            
+            <div class="jumbotron">
+                <h1 class="display-4">{{key}}</h1>
+                <hr class="my-4">
+                <strong>PRICE: </strong>{{ value.INR.PRICE }} <br/>
+                <strong>24h High: </strong>{{ value.INR.HIGHDAY }} <br/>
+                <strong>24h Low: </strong>{{ value.INR.LOWDAY }} <br/>
+                <strong>MKTCAP: </strong>{{ value.INR.MKTCAP }} <br/>
             </div>
-            
-        </div>
     {% endfor %}
    </div>
 {% endblock %}
